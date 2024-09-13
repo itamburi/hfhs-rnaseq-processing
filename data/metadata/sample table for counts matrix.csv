@@ -1,0 +1,33 @@
+sample_name,Run_ID,Sample_ID,Nova_ID,UDI,seqID,names,files,Flux sample name,,Pig,Tissue,tissue_name_match
+P1_deduped.bam,2021-06-12_050251,1,S1,UDI049,P1_deduped.bam,P1_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P1_deduped.bam,livekidney_120m_fed1,,1,Liver,LIVER
+P2_deduped.bam,2021-06-12_050251,2,S2,UDI057,P2_deduped.bam,P2_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P2_deduped.bam,sk muscle_120m_fed1,,1,WAT,WAT
+P3_deduped.bam,2021-06-12_050251,3,S3,UDI065,P3_deduped.bam,P3_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P3_deduped.bam,portal_120m_fed1,,1,Small intestine,SMALL INT
+P4_deduped.bam,2021-06-12_050251,4,S4,UDI073,P4_deduped.bam,P4_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P4_deduped.bam,colon_120m_fed1,,1,Large intestine,LARGE INT 
+P5_deduped.bam,2021-06-12_050251,5,S5,UDI081,P5_deduped.bam,P5_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P5_deduped.bam,heart_120m_fed1,,1,Heart,HEART
+P6_deduped.bam,2021-06-12_050251,6,S6,UDI089,P6_deduped.bam,P6_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P6_deduped.bam,lung_120m_fed1,,1,Lung,LUNG
+P7_deduped.bam,2021-06-12_050251,7,S7,UDI066,P7_deduped.bam,P7_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P7_deduped.bam,sk muscle_120m_fed1,,1,Muscle,MUSCLE
+P8_deduped.bam,2021-06-12_050251,8,S8,UDI074,P8_deduped.bam,P8_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P8_deduped.bam,skin_120m_fed1,,1,Skin,SKIN
+P9_deduped.bam,2021-06-12_050251,9,S9,UDI042,P9_deduped.bam,P9_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P9_deduped.bam,kidney_120m_fed1,,1,Kidney cortex,KID CORTEX
+P10_deduped.bam,2021-06-12_050251,10,S10,UDI050,P10_deduped.bam,P10_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P10_deduped.bam,kidney_120m_fed1,,1,Kidney medulla,KID MED
+P11_deduped.bam,2021-06-12_050251,11,S11,UDI058,P11_deduped.bam,P11_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P11_deduped.bam,spleen_120m_fed1,,1,Spleen,SPLEEN
+P12_deduped.bam,2021-06-12_050251,12,S12/S13,UDI082/UDI043,P12_deduped.bam,P12_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P12_deduped.bam,livekidney_120m_fed2,,2,Liver,LIVER
+P13_deduped.bam,2021-06-12_050251,13,S14,UDI051,P13_deduped.bam,P13_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P13_deduped.bam,sk muscle_120m_fed2,,2,WAT,WAT
+P14_deduped.bam,2021-06-12_050251,14,S15,UDI059,P14_deduped.bam,P14_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P14_deduped.bam,portal_120m_fed2,,2,Small intestine,SMALL INT
+P15_deduped.bam,2021-06-12_050251,15,S16,UDI067,P15_deduped.bam,P15_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P15_deduped.bam,colon_120m_fed2,,2,Large intestine,LARGE INT 
+P16_deduped.bam,2021-06-12_050251,16,S17,UDI075,P16_deduped.bam,P16_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P16_deduped.bam,heart_120m_fed2,,2,Heart,HEART
+P17_deduped.bam,2021-06-12_050251,17,S18,UDI083,P17_deduped.bam,P17_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P17_deduped.bam,lung_120m_fed2,,2,Lung,LUNG
+P19_deduped.bam,2021-06-12_050251,19,S20,UDI052,P19_deduped.bam,P19_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P19_deduped.bam,skin_120m_fed2,,2,Skin,SKIN
+P20_deduped.bam,2021-06-12_050251,20,S21,UDI060,P20_deduped.bam,P20_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P20_deduped.bam,kidney_120m_fed2,,2,Kidney cortex,KID CORTEX
+P21_deduped.bam,2021-06-12_050251,21,S22,UDI068,P21_deduped.bam,P21_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P21_deduped.bam,kidney_120m_fed2,,2,Kidney medulla,KID MED
+P22_deduped.bam,2021-06-12_050251,22,S23,UDI076,P22_deduped.bam,P22_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P22_deduped.bam,spleen_120m_fed2,,2,Spleen,SPLEEN
+P23_deduped.bam,2021-06-12_050251,23,S24,UDI084,P23_deduped.bam,P23_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P23_deduped.bam,livekidney_000m_fed4,,4,Liver,LIVER
+P24_deduped.bam,2021-06-12_050251,24,S25,UDI045,P24_deduped.bam,P24_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P24_deduped.bam,sk muscle_120m_fed4,,4,WAT,WAT
+P25_deduped.bam,2021-06-12_050251,25,S26,UDI053,P25_deduped.bam,P25_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P25_deduped.bam,portal_120m_fed4,,4,Small intestine,SMALL INT
+P26_deduped.bam,2021-06-12_050251,26,S27,UDI061,P26_deduped.bam,P26_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P26_deduped.bam,colon_120m_fed4,,4,Large intestine,LARGE INT 
+P27_deduped.bam,2021-06-12_050251,27,S28,UDI069,P27_deduped.bam,P27_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P27_deduped.bam,heart_120m_fed4,,4,Heart,HEART
+P28_deduped.bam,2021-06-12_050251,28,S29,UDI077,P28_deduped.bam,P28_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P28_deduped.bam,lung_120m_fed4,,4,Lung,LUNG
+P29_deduped.bam,2021-06-12_050251,29,S30,UDI085,P29_deduped.bam,P29_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P29_deduped.bam,sk muscle_120m_fed4,,4,Muscle,MUSCLE
+P30_deduped.bam,2021-06-12_050251,30,S31,UDI046,P30_deduped.bam,P30_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P30_deduped.bam,skin_120m_fed4,,4,Skin,SKIN
+P31_deduped.bam,2021-06-12_050251,31,S32,UDI054,P31_deduped.bam,P31_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P31_deduped.bam,kidney_120m_fed4,,4,Kidney cortex,KID CORTEX
+P32_deduped.bam,2021-06-12_050251,32,S33,UDI062,P32_deduped.bam,P32_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P32_deduped.bam,kidney_120m_fed4,,4,Kidney medulla,KID MED
+P33_deduped.bam,2021-06-12_050251,33,S34,UDI070,P33_deduped.bam,P33_deduped.bam,G:/My Drive/lab files/cholsoon jang/pig flux/deduped bam files/P33_deduped.bam,spleen_120m_fed4,,4,Spleen,SPLEEN

@@ -1,0 +1,166 @@
+#!/bin/bash
+
+#SBATCH --job-name=pig_genome_align
+#SBATCH -A mseldin_lab
+#SBATCH --mail-type=fail,end
+#SBATCH --mail-user=mseldin@uci.edu
+#SBATCH --cpus-per-task=30
+
+module load star
+module load gatk
+cd /dfs4/som/mseldin/pig_flux/raw_seq_data/bam_files
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S1/S1_CKDL210011946-1a-5UDI1913-AK26689_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S1/S1_CKDL210011946-1a-5UDI1913-AK26689_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S1.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S1.bamAligned.sortedByCoord.out.bam OUTPUT=P1_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S2/S2_CKDL210011946-1a-AK26780-AK26691_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S2/S2_CKDL210011946-1a-AK26780-AK26691_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S2.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S2.bamAligned.sortedByCoord.out.bam OUTPUT=P2_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S3/S3_CKDL210011946-1a-AK7105-AK354_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S3/S3_CKDL210011946-1a-AK7105-AK354_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S3.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S3.bamAligned.sortedByCoord.out.bam OUTPUT=P3_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S4/S4_CKDL210011946-1a-5UDI1481-A66_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S4/S4_CKDL210011946-1a-5UDI1481-A66_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S4.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S4.bamAligned.sortedByCoord.out.bam OUTPUT=P4_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S5/S5_CKDL210011946-1a-AK13340-7UDI2513_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S5/S5_CKDL210011946-1a-AK13340-7UDI2513_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S5.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S5.bamAligned.sortedByCoord.out.bam OUTPUT=P5_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S6/S6_CKDL210011946-1a-5UDI408-AK26672_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S6/S6_CKDL210011946-1a-5UDI408-AK26672_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S6.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S6.bamAligned.sortedByCoord.out.bam OUTPUT=P6_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S7/S7_CKDL210011946-1a-AK14703-AK26699_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S7/S7_CKDL210011946-1a-AK14703-AK26699_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S7.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S7.bamAligned.sortedByCoord.out.bam OUTPUT=P7_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S8/S8_CKDL210011946-1a-AK17892-7UDI1014_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S8/S8_CKDL210011946-1a-AK17892-7UDI1014_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S8.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S8.bamAligned.sortedByCoord.out.bam OUTPUT=P8_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S9/S9_CKDL210011946-1a-AK26345-AK6587_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S9/S9_CKDL210011946-1a-AK26345-AK6587_HF5KCDSX2_L3_1.fq.gz --outFileNamePrefix S9.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S9.bamAligned.sortedByCoord.out.bam OUTPUT=P9_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S10/S10_CKDL210011946-1a-AK26785-AK26702_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S10/S10_CKDL210011946-1a-AK26785-AK26702_HF5KCDSX2_L3_1.fq.gz --outFileNamePrefix S10.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S10.bamAligned.sortedByCoord.out.bam OUTPUT=P10_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S11/S11_CKDL210011946-1a-5UDI471-AK5163_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S11/S11_CKDL210011946-1a-5UDI471-AK5163_HF5KCDSX2_L3_1.fq.gz --outFileNamePrefix S11.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S11.bamAligned.sortedByCoord.out.bam OUTPUT=P11_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S12/S12_CKDL210011946-1a-AK4993-AK516_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S12/S12_CKDL210011946-1a-AK4993-AK516_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S13/S13_CKDL210011946-1a-AK26777-AK26685_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S13/S13_CKDL210011946-1a-AK26777-AK26685_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S12_13.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S12_13.bamAligned.sortedByCoord.out.bam OUTPUT=P12_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S14/S14_CKDL210011946-1a-AK26786-AK10836_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S14/S14_CKDL210011946-1a-AK26786-AK10836_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S14.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S14.bamAligned.sortedByCoord.out.bam OUTPUT=P13_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S15/S15_CKDL210011946-1a-AK26781-AK26693_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S15/S15_CKDL210011946-1a-AK26781-AK26693_HF5KCDSX2_L3_1.fq.gz --outFileNamePrefix S15.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S15.bamAligned.sortedByCoord.out.bam OUTPUT=P14_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S16/S16_CKDL210011946-1a-AK26784-AK23296_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S16/S16_CKDL210011946-1a-AK26784-AK23296_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S16.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S16.bamAligned.sortedByCoord.out.bam OUTPUT=P15_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S17/S17_CKDL210011946-1a-AK10795-5UDI468_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S17/S17_CKDL210011946-1a-AK10795-5UDI468_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S17.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S17.bamAligned.sortedByCoord.out.bam OUTPUT=P16_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S18/S18_CKDL210011946-1a-AK26771-AK17429_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S18/S18_CKDL210011946-1a-AK26771-AK17429_HF5KCDSX2_L3_1.fq.gz --outFileNamePrefix S18.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S18.bamAligned.sortedByCoord.out.bam OUTPUT=P17_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+#Note S19 had no data
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S20/S20_CKDL210011946-1a-AK12245-AK9647_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S20/S20_CKDL210011946-1a-AK12245-AK9647_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S20.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S20.bamAligned.sortedByCoord.out.bam OUTPUT=P19_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S21/S21_CKDL210011946-1a-AK26782-GB04_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S21/S21_CKDL210011946-1a-AK26782-GB04_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S21.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S21.bamAligned.sortedByCoord.out.bam OUTPUT=P20_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S22/S22_CKDL210011946-1a-AK5767-AK26700_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S22/S22_CKDL210011946-1a-AK5767-AK26700_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S22.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S22.bamAligned.sortedByCoord.out.bam OUTPUT=P21_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S23/S23_CKDL210011946-1a-AK26769-5UDI2340_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S23/S23_CKDL210011946-1a-AK26769-5UDI2340_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S23.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S23.bamAligned.sortedByCoord.out.bam OUTPUT=P22_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S24/S24_CKDL210011946-1a-AK9182-AK26670_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S24/S24_CKDL210011946-1a-AK9182-AK26670_HF5KCDSX2_L3_1.fq.gz --outFileNamePrefix S24.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S24.bamAligned.sortedByCoord.out.bam OUTPUT=P23_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S25/S25_CKDL210011946-1a-AK26779-7UDI2528_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S25/S25_CKDL210011946-1a-AK26779-7UDI2528_HF5KCDSX2_L3_1.fq.gz --outFileNamePrefix S25.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S25.bamAligned.sortedByCoord.out.bam OUTPUT=P24_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S26/S26_CKDL210011946-1a-AK26787-AK26705_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S26/S26_CKDL210011946-1a-AK26787-AK26705_HF5KCDSX2_L3_1.fq.gz --outFileNamePrefix S26.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S26.bamAligned.sortedByCoord.out.bam OUTPUT=P25_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S27/S27_CKDL210011946-1a-AK3997-GF03_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S27/S27_CKDL210011946-1a-AK3997-GF03_HF5KCDSX2_L3_1.fq.gz --outFileNamePrefix S27.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S27.bamAligned.sortedByCoord.out.bam OUTPUT=P26_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S28/S28_CKDL210011946-1a-7UDI476-AK16383_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S28/S28_CKDL210011946-1a-7UDI476-AK16383_HF5KCDSX2_L3_2.fq.gz  --outFileNamePrefix S28.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S28.bamAligned.sortedByCoord.out.bam OUTPUT=P27_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S29/S29_CKDL210011946-1a-AK26770-7UDI308_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S29/S29_CKDL210011946-1a-AK26770-7UDI308_HF5KCDSX2_L3_1.fq.gz  --outFileNamePrefix S29.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S29.bamAligned.sortedByCoord.out.bam OUTPUT=P28_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S30/S30_CKDL210011946-1a-AK4238-AK7862_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S30/S30_CKDL210011946-1a-AK4238-AK7862_HF5KCDSX2_L3_2.fq.gz  --outFileNamePrefix S30.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S30.bamAligned.sortedByCoord.out.bam OUTPUT=P29_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S31/S31_CKDL210011946-1a-GG06-7UDI2522_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S31/S31_CKDL210011946-1a-GG06-7UDI2522_HF5KCDSX2_L3_2.fq.gz  --outFileNamePrefix S31.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S31.bamAligned.sortedByCoord.out.bam OUTPUT=P30_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S32/S32_CKDL210011946-1a-AK1506-AK7552_HF5KCDSX2_L3_2.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S32/S32_CKDL210011946-1a-AK1506-AK7552_HF5KCDSX2_L3_1.fq.gz --outFileNamePrefix S32.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S32.bamAligned.sortedByCoord.out.bam OUTPUT=P31_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S33/S33_CKDL210011946-1a-AK16774-AK529_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S33/S33_CKDL210011946-1a-AK16774-AK529_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S33.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S33.bamAligned.sortedByCoord.out.bam OUTPUT=P32_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+STAR --genomeDir /dfs4/som/mseldin/genome_files/Sus_scrofa_STAR/ --runThreadN 28 --readFilesCommand zcat --readFilesIn /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S34/S34_CKDL210011946-1a-5UDI2515-AK24550_HF5KCDSX2_L3_1.fq.gz /dfs4/som/mseldin/pig_flux/raw_seq_data/raw_data/S34/S34_CKDL210011946-1a-5UDI2515-AK24550_HF5KCDSX2_L3_2.fq.gz --outFileNamePrefix S34.bam --outSAMtype BAM SortedByCoordinate
+
+gatk MarkDuplicates INPUT=S34.bamAligned.sortedByCoord.out.bam OUTPUT=P33_deduped.bam METRICS_FILE=marked_dup_metricspP010.txt REMOVE_DUPLICATES=TRUE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
