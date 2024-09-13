@@ -10,4 +10,4 @@ In `data/raw counts` :
 
 The script `sva fitting gene expression and counts.R` can be executed as-is to reproduce the processing steps and outputs that include the final, batch-adjusted counts matrix in `data/processed` named `fitted filtered and batch adjusted counts combined.csv`
 
-Examples of the STAR calls used for to produce counts are included in our SLURM sub file `star_align_pig.sub`
+Examples of the STAR calls used for alignment are included in our SLURM sub file `star_align_pig.sub` . An example process indicating how bam files were assembled into counts matrices is shown in `counts matrix assembly example.R`
